@@ -28,10 +28,14 @@ sudo apt install open-fprintd fprintd-clients python3-validity
 # 4. Enroll a fingerprint (test if it's working)
 fprintd-enroll
 
-# 5. Enable PAM auth
-sudo pam-auth-update
+# 5. Verify whether the fingerprint scanner is working or not.
+fprintd-verify
 
-# 6. Enable suspend/resume helpers
+# 6. Enable PAM auth
+sudo pam-auth-update
+# choose Fingerprint authentication and OK
+
+# 7. Enable suspend/resume helpers
 sudo systemctl enable open-fprintd-resume open-fprintd-suspend
 ```
 
