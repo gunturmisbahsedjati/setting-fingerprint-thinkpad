@@ -1,4 +1,4 @@
-### ✅ WORKING Setup for Synaptics Metallica MIS (06cb:009a) on **KDE NEON 2026 / Ubuntu 24.04 (noble)**
+### WORKING Setup for Synaptics Metallica MIS (06cb:009a) on **KDE NEON 2026 / Ubuntu 24.04 (noble)**
 
 > Based on https://github.com/uunicorn/python-validity/issues/202#issuecomment-2760608822
 
