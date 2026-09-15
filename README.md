@@ -49,4 +49,19 @@ sudo systemctl enable open-fprintd-resume open-fprintd-suspend
 - System: **KDE NEON 2026** / **Ubuntu 24.04 (noble)** base  
 - Kernel: `7.0.0`
 
+---
+### BONUS (To extend timeout)
+```bash
+# to extend the timeout duration
+sudo nano /etc/fprintd.conf
+# change to
+[storage]
+type=file
+
+[daemon]
+timeout=60
+
+sudo systemctl restart open-fprintd python3-validity
+```
+
 > Hoping to help fellow Lenovo ThinkPad A485 users who are confused.❤️
