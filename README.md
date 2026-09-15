@@ -35,7 +35,7 @@ sudo systemctl enable open-fprintd-resume open-fprintd-suspend
 
 ---
 
-### ✅ Result:
+### 🎉🎉🎉 Result:
 
 - Working fingerprint login
 - Fully integrated into KDE NEON 2026 login & sudo prompts
