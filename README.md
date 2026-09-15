@@ -13,11 +13,13 @@
 #### 🛠️ Steps:
 
 ```bash
-# 1. Add the PPA – but noble isn’t supported, so we edit it after
+# 1. Add the PPA
 sudo add-apt-repository ppa:uunicorn/open-fprintd
 
 # 2. Update + fix conflicting packages
 sudo apt update
+
+# if fprintd is already installed. If not, proceed directly to step 3.
 sudo apt remove fprintd
 
 # 3. Install everything you need
