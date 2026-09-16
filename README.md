@@ -50,7 +50,9 @@ sudo systemctl enable open-fprintd-resume open-fprintd-suspend
 - Kernel: `7.0.0`
 
 ---
-### BONUS (To extend timeout)
+### BONUS
+
+- To extend timeout
 ```bash
 # to extend the timeout duration
 sudo nano /etc/fprintd.conf
@@ -61,6 +63,32 @@ type=file
 [daemon]
 timeout=60
 
+sudo systemctl restart open-fprintd python3-validity
+```
+
+- Auto-Restart systemd rule (if lockscreen timeout not showing verification fingerprint)
+```bash
+sudo systemctl edit python3-validity
+# add lines
+[Service]
+Restart=on-failure
+RestartSec=1s
+
+sudo mkdir -p /etc/systemd/system/python3-validity.service.d/
+echo -e "[Service]\nRestart=on-failure\nRestartSec=1s" | sudo tee /etc/systemd/system/python3-validity.service.d/override.conf
+
+
+sudo systemctl edit open-fprintd
+# add lines
+[Service]
+Restart=on-failure
+RestartSec=1s
+
+sudo mkdir -p /etc/systemd/system/open-fprintd.service.d/
+echo -e "[Service]\nRestart=on-failure\nRestartSec=1s" | sudo tee /etc/systemd/system/open-fprintd.service.d/override.conf
+
+
+sudo systemctl daemon-reload
 sudo systemctl restart open-fprintd python3-validity
 ```
 
